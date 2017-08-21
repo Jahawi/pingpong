@@ -1,12 +1,17 @@
-$(document).ready(function() {
-          $("#blanks form").submit(function(event) {
-        var blanks = ["person1", "person2", "animal", "exclamation", "verb", "noun"];
+function pingPongClick() {
+  var number = document.getElementById("txt_pp").value;
+  var result = "";
+  for (var i = 1; i <= number; i++) {
+    if (i % 15 == 0) {
+      result += "<li>PingPong</li>";
+    } else if (i % 5 == 0) {
+      result += "<li>Pong</li>";
+    } else if (i % 3 == 0) {
+      result += "<li>Ping</li>";
+    } else {
+      result += "<li>" + i + "</li>";
+    }
 
-        blanks.forEach(function(blank) {
-          var userInput = $("input#" + blank).val();
-          $("." + blank).text(userInput);
-        });
-          $("#story").show();
-          event.preventDefault();
-        });
-      });
+  }
+  document.getElementById("ans").innerHTML = result;
+}
