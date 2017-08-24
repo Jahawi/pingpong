@@ -10,5 +10,4 @@ ATOM text editor
 
 # License
 
-# Specifications
 
